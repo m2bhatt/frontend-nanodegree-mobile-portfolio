@@ -441,7 +441,7 @@ var resizePizzas = function(size) {
       }
     }
 
-    var newSize = sizeSwitcher(size);
+  /*  var newSize = sizeSwitcher(size);
     var dx = (newSize - oldSize) * windowWidth;
 
     return dx;
@@ -454,9 +454,15 @@ var resizePizzas = function(size) {
       var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
       document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
     }
-  }
+  } */
 
-  changePizzaSizes(size);
+  var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+
+  for (var i = 0; i < randomPizzas.length; i++) {
+    randomPizzas[i].style.width = newwidth + "%";
+  }
+}
+  //changePizzaSizes(size);
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
@@ -502,8 +508,9 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  var cachedScrollTop = document.body.scrollTop;
   for (var i = 0; i < items.length; i++) {
-    phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin((cachedScrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
