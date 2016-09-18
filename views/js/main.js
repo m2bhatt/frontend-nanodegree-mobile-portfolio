@@ -441,29 +441,13 @@ var resizePizzas = function(size) {
       }
     }
 
-  /*  var newSize = sizeSwitcher(size);
-    var dx = (newSize - oldSize) * windowWidth;
-
-    return dx;
-  }
-
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-    }
-  } */
-
   var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-
   for (var i = 0; i < randomPizzas.length; i++) {
     randomPizzas[i].style.width = newwidth + "%";
   }
 }
-  //changePizzaSizes(size);
-
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
   window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
@@ -503,6 +487,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
+//Added cachedScrollTop to avoid rendering entire page on every scroll
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
