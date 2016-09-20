@@ -442,10 +442,12 @@ var resizePizzas = function(size) {
     }
 
   // Iterates through pizza elements on the page and changes their widths
+  function changePizzaSlices(size){
   var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
   for (var i = 0; i < randomPizzas.length; i++) {
     randomPizzas[i].style.width = newwidth + "%";
   }
+}
 }
 
   // User Timing API is awesome
