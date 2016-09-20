@@ -1,0 +1,6 @@
+{
+  "name": "Frontend-nanodegree-mobile-portfolio",
+  "tagline": "",
+  "body": "## Website Performance Optimization portfolio project\r\n\r\n### For index.html\r\n- Added [media=\"screen\"] to the style.css to every HTML file.\r\n- Added [media=\"print\"] to the print.css to every HTML file.\r\n- Added async to every Google Analytics script.\r\n- Moved the .css files to the end of the page (right before the `</body>` tag)\r\n\r\n### For main.js\r\n- Modified changePizzaSizes to ensure querySelectorAll wasn't repetitive.\r\n- For updatePositions, added a var cachedScrollTop and used it within the function to avoid repeating the query scrollTop position multiple times.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
